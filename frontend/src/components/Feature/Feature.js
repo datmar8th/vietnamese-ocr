@@ -35,7 +35,7 @@ const Feature = () => {
     formData.append("file", imageFile, "img_transformer.png");
 
     let t0 = performance.now();
-    axios.post("http://127.0.0.1:5000/upload", formData).then((res, data) => {
+    axios.post("https://a260-14-243-40-174.ap.ngrok.io/upload", formData).then((res, data) => {
       data = res.data;
       setImagePrediction(data);
       let t1 = performance.now();
@@ -54,7 +54,7 @@ const Feature = () => {
     formData.append("file", imageFile, "img_crnn.png");
 
     let t0 = performance.now();
-    axios.post("http://127.0.0.1:5000/upload", formData).then((res, data) => {
+    axios.post("https://a260-14-243-40-174.ap.ngrok.io/upload", formData).then((res, data) => {
       data = res.data;
       setImagePrediction(data);
       let t1 = performance.now();
