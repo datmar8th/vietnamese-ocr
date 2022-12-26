@@ -35,7 +35,7 @@ const Feature = () => {
     formData.append("file", imageFile, "img_transformer.png");
 
     let t0 = performance.now();
-    axios.post("https://2196-14-233-17-5.ap.ngrok.io/upload", formData).then((res, data) => {
+    axios.post("http://127.0.0.1:5000/upload", formData).then((res, data) => {
       data = res.data;
       setImagePrediction(data);
       let t1 = performance.now();
@@ -48,24 +48,24 @@ const Feature = () => {
     });
   };
 
-  // const uploadCRNNHandler = (event) => {
-  //   event.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("file", imageFile, "img_crnn.png");
+  const uploadCRNNHandler = (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("file", imageFile, "img_crnn.png");
 
-  //   let t0 = performance.now();
-  //   axios.post("http://127.0.0.1:5000/upload", formData).then((res, data) => {
-  //     data = res.data;
-  //     setImagePrediction(data);
-  //     let t1 = performance.now();
-  //     console.log(data);
-  //     console.log(
-  //       "The time LSTM & Attention took to predict the image " +
-  //         (t1 - t0) +
-  //         " milliseconds."
-  //     );
-  //   });
-  // };
+    let t0 = performance.now();
+    axios.post("http://127.0.0.1:5000/upload", formData).then((res, data) => {
+      data = res.data;
+      setImagePrediction(data);
+      let t1 = performance.now();
+      console.log(data);
+      console.log(
+        "The time LSTM & Attention took to predict the image " +
+          (t1 - t0) +
+          " milliseconds."
+      );
+    });
+  };
 
   return (
     <div className="container--feature">
