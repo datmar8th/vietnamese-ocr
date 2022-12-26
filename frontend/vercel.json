@@ -1,13 +1,13 @@
 {
     "version": 2,
     "builds": [{
-      "src": "./src/App.js",
-      "use": "@vercel/nodee"
+    "src" : "package.json",
+    "use": "@now/static-build"
     }],
     "routes": [
       {
-        "src": "/src/(.*)",
-        "dest": "/src"
+        "src": ".*",
+        "dest": "/index.html"
       }
     ]
   }
