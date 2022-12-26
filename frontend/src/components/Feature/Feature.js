@@ -35,9 +35,8 @@ const Feature = () => {
     formData.append("file", imageFile, "img_transformer.png");
 
     let t0 = performance.now();
-    axios.post("https://cdab-14-243-40-27.ap.ngrok.io/upload",
+    axios.post("https://0a26-14-185-227-52.ap.ngrok.io/upload",
     formData,{
-
         headers: new Headers({
             "ngrok-skip-browser-warning": "69420",
         }),
@@ -61,7 +60,12 @@ const Feature = () => {
     formData.append("file", imageFile, "img_crnn.png");
 
     let t0 = performance.now();
-    axios.post("http://127.0.0.1:5000/upload", formData).then((res, data) => {
+    axios.post("http://127.0.0.1:5000/upload",
+    formData,{
+      headers: new Headers({
+          "ngrok-skip-browser-warning": "69420",
+      }),
+  }).then((res, data) => {
       data = res.data;
       setImagePrediction(data);
       let t1 = performance.now();
